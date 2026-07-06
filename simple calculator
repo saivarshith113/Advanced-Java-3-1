@@ -1,14 +1,8 @@
 import java.util.Scanner;
-class Main {
-    public static void main(String[] args) {
-        Calculator cal = new Calculator();
-        cal.send();
-    }
-}
-class Calculator {
+class Calci {
     Scanner sc = new Scanner(System.in);
     void send() {
-        System.out.println("Sender : Hi");
+        System.out.println("Send : Hi");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -36,7 +30,6 @@ class Calculator {
             case '-':
                 System.out.println("Result = " + (a - b));
                 break;
-
             case '*':
                 System.out.println("Result = " + (a * b));
                 break;
@@ -44,7 +37,7 @@ class Calculator {
                 if (b != 0)
                     System.out.println("Result = " + (a / b));
                 else
-                    System.out.println("Division by zero is Invalid.");
+                    System.out.println("Division by zero is not possible.");
                 break;
             default:
                 System.out.println("Invalid choice");
@@ -55,7 +48,13 @@ class Calculator {
              receive();
          }
          else{
-             System.out.println("Receiver : Bye");
+             System.out.println("Receive : Bye");
          }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Calci c = new Calci();
+        c.send();
     }
 }
