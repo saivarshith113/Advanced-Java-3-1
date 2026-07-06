@@ -1,14 +1,13 @@
 import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
-        Calculator obj = new Calculator();
-        obj.sender();
+        Calculator cal = new Calculator();
+        cal.send();
     }
 }
 class Calculator {
-    int state = 0;
     Scanner sc = new Scanner(System.in);
-    void sender() {
+    void send() {
         System.out.println("Sender : Hi");
         try {
             Thread.sleep(5000);
@@ -16,9 +15,9 @@ class Calculator {
               System.out.println(e);
         }
         System.out.println("Receiver : Hello");
-        receiver();
+        receive();
     }
-    void receiver() {
+    void receive() {
         char op;
         int a, b;
        System.out.println("Which operation would you like to perform? (+, -, *, /)");
@@ -53,7 +52,7 @@ class Calculator {
          System.out.println("Would you like to continue('true'/'false'):");
          s=sc.next();
          if(s.equals("true")){
-             receiver();
+             receive();
          }
          else{
              System.out.println("Receiver : Bye");
